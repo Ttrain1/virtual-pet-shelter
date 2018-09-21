@@ -9,6 +9,7 @@ public class VirtualPet {
 	public int energy;
 	public int time;
 	public boolean alive;
+	public String description;
 
 	public String getName() {
 		return name;
@@ -25,13 +26,14 @@ public class VirtualPet {
 	public int getEnergy() {
 		return energy;
 	}
-	public VirtualPet(String name) {
+	public VirtualPet(String name , String description) {
 		this.name = name;
 		this.hunger = 50;
 		this.thirst = 50;
 		this.happiness = 50;
 		this.energy = 100;
 		this.alive = true;
+		this.description= description;
 	}
 
 	public void feed(String food) {
