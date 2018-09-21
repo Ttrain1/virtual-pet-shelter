@@ -111,9 +111,7 @@ public class VirtualPet {
 		alive = false;
 	}
 
-	public void tick() {
-
-		
+	public void tick() {		
 		degrade();
 		if ((hunger > 100) || (thirst > 100 || (energy<0))) {
 			die();

@@ -49,6 +49,15 @@ public class VirtualPetShelter {
 		}
 	}
 
+	public void playWithOnePet(String name) {
+		VirtualPet playingPet = shelter.get(name);
+		playingPet.play("");
+	}
+
+	public VirtualPet fetchPetFromId(String id) {
+		return shelter.get(id);
+	}
+
 	public void allPetsSleep() {
 		for (Entry<String, VirtualPet> eachPet : shelter.entrySet()) {
 			VirtualPet loopedPet = eachPet.getValue();
@@ -57,20 +66,16 @@ public class VirtualPetShelter {
 		}
 	}
 
-	public VirtualPet getPet(String id) {
-		VirtualPet foundPet = shelter.get(id);
-		return foundPet;
-	}
-
 	public Collection<VirtualPet> showPets() {
 		Collection<VirtualPet> petCollection = shelter.values();
 		return petCollection;
 	}
 
-	public VirtualPet fetchPetFromName(String petsName) {
-		
-		VirtualPet petYouNeed = shelter.
-		return petYouNeed;
+	public void shelterTick() {
+		for (Entry<String, VirtualPet> eachPet : shelter.entrySet()) {
+			VirtualPet loopedPet = eachPet.getValue();
+			loopedPet.tick();
+		}
+
 	}
-	
 }

@@ -70,23 +70,39 @@ public class VirtualPetShelterTest {
 	@Test
 	public void shouldGetPet() {
 		underTest.addPet("123", dummyPet);
-		VirtualPet tempPet = underTest.getPet("123");
+		VirtualPet tempPet = underTest.fetchPetFromId("123");
 		assertEquals(dummyPet, tempPet);
 	}
 
 	@Test
-	public void shouldGetPetFromName() {
-		underTest.addPet("", dummyPet);
-		VirtualPet tempPet = underTest.fetchPetFromName("dummyPet");
-	}
-
-	@Test
 	public void shouldPrintPetsInShelter() {
-		underTest.addPet("1",dummyPet);
+		underTest.addPet("1", dummyPet);
 		for (VirtualPet eachPet : underTest.showPets()) {
-			String loopedPet = eachPet.getName();			
-			assertEquals("james", loopedPet );
+			String loopedPet = eachPet.getName();
+			assertEquals("james", loopedPet);
 		}
 	}
 
+	@Test
+	public void shouldGetPetFromId() {
+		String petsName = dummyPet.getName();
+		underTest.addPet(petsName, dummyPet);
+		VirtualPet actual = underTest.fetchPetFromId(petsName);
+		assertEquals("james", actual.getName());
+
+	}
+	@Test
+	public void checkTick() {
+	underTest.addPet("", dummyPet);
+	underTest.shelterTick();
+	int hungerAfterTick= dummyPet.hunger;
+	assertEquals(55, hungerAfterTick);
+	}
+	@Test
+	public void checkPlayWithOne () {
+		underTest.addPet("", dummyPet);
+		underTest.playWithOnePet("");
+		int afterPlay = dummyPet.happiness;
+		assertEquals(60, afterPlay);
+	}
 }
