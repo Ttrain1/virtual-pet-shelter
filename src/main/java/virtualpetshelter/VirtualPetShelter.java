@@ -9,7 +9,8 @@ public class VirtualPetShelter {
 
 	Map<String, VirtualPet> shelter = new HashMap<String, VirtualPet>();
 
-	boolean allPetsAlive = true;
+	public boolean allPetsAlive = true;
+	
 	
 	public boolean hasNoPets() {
 		if (shelter.isEmpty()) {

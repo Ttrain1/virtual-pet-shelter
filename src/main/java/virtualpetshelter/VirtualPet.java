@@ -3,7 +3,7 @@ package virtualpetshelter;
 public class VirtualPet {
 
 	public String name;
-	public int hunger;
+	public int hunger ;
 	public int thirst;
 	public int happiness;
 	public int energy;
@@ -26,6 +26,7 @@ public class VirtualPet {
 	public int getEnergy() {
 		return energy;
 	}
+	
 	public VirtualPet(String name , String description) {
 		this.name = name;
 		this.hunger = 50;
@@ -122,7 +123,8 @@ public class VirtualPet {
 	private void degrade() {
 		hunger += 5;
 		thirst += 5;
-
+		happiness --;
+		energy -=5;
 	}
 
 	

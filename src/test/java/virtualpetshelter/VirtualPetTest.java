@@ -20,7 +20,7 @@ public class VirtualPetTest {
 	VirtualPet underTest = new VirtualPet("sid", "");
 	
 	int petHunger = underTest.hunger;
-	Assert.assertEquals(50, petHunger);
+	Assert.assertEquals(0, petHunger);
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class VirtualPetTest {
 		
 		underTest.feed("");
 		
-		Assert.assertEquals(0, underTest.hunger);	
+		Assert.assertEquals(-50, underTest.hunger);	
 	}
 	
 	@Test
@@ -46,6 +46,8 @@ public class VirtualPetTest {
 		underTest.tick();
 		Assert.assertFalse(underTest.alive);
 	}
+		
 	}
+	
 
 	
