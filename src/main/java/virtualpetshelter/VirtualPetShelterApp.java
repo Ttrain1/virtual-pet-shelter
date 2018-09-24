@@ -23,7 +23,7 @@ public class VirtualPetShelterApp {
 			String playerChoice = input.nextLine();
 			menuChoice(shelter, playerChoice);
 			shelter.shelterTick();
-		} while (shelter.allPetsAlive && !shelter.hasNoPets());
+		} while (shelter.allPetsAlive==true && !shelter.hasNoPets());
 		input.close();
 	}
 

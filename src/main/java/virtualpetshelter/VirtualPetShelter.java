@@ -11,6 +11,9 @@ public class VirtualPetShelter {
 
 	public boolean allPetsAlive = true;
 	
+	public boolean aPetDied() {
+		return allPetsAlive = false;
+	}
 	
 	public boolean hasNoPets() {
 		if (shelter.isEmpty()) {
@@ -78,7 +81,11 @@ public class VirtualPetShelter {
 		for (Entry<String, VirtualPet> eachPet : shelter.entrySet()) {
 			VirtualPet loopedPet = eachPet.getValue();
 			loopedPet.tick();
+			if (loopedPet.hunger>100 || loopedPet.thirst>100 || loopedPet.energy<0) {
+				System.out.println("You let a pet die Your geting shut down.");
+				aPetDied();
+				
 		}
-
+		}
 	}
 }
