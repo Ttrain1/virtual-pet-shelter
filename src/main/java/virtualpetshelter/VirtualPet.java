@@ -38,39 +38,19 @@ public class VirtualPet {
 	}
 
 	public void feed(String food) {
-		if (food.equals("1")) {
-			hunger -= 25;
-			thirst += 5;
-		} else if (food.equals("2")) {
-			hunger -= 15;
-			thirst -= 15;
-		} else if (food.equals("3")) {
-			hunger -= 35;
+		if (hunger<50) {
+			hunger = 0;
 		} else {
 			hunger -= 50;
 		}
 	}
 
 	public void drink(String drink ) {
-		switch (drink) {
-		case "1":
-			thirst -= 25;
-			break;
-		case "2":
-			thirst -= 15;
-			hunger -= 5;
-			break;
-		case "3":
-			thirst -= 35;
-			break;
-		case "4":
-			thirst -= 25;
-			hunger -= 15;
-			break;
-		default :
+		if (thirst<50) {
+			thirst = 0;
+		} else {
 			thirst -= 50;
 		}
-		
 	}
 
 	public void sleep() {
